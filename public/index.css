@@ -1,10 +1,91 @@
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.background{
+
+    background-color : #01090B
 }
-h1 {
-    color: red;
-    font-family: Helvetica, Arial, sans-serif;
+
+a, input, img {
+    display: block;
 }
+.item-a {
+
+    grid-area: header;
+}
+.item-b {
+    grid-area: front;
+}
+.back-a{
+
+}
+.item-c {
+    grid-area: main;
+}
+.item-d {
+    grid-area: footer;
+}
+
+
+.container {
+
+    background: url("1+1.jpg");
+    margin: -8px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "header"
+    "frontfront"
+    "main"
+    "footer";
+    background-size: cover;
+    height: 555px;
+}
+
+.header {
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "label item_head item_head item_head item_head item_head item_head"
+}
+
+
+.navbar {
+    font-family: GTEestiProDisplay-Bold, cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: flex-end;
+    text-align: center;
+    color: #FFFFFF;
+    height: 76px;
+    background: linear-gradient(180deg, #070606 6.08%, rgba(7, 6, 6, 0.5) 55.03%, rgba(14, 12, 12, 0.25) 78.99%, rgba(27, 23, 23, 0.1) 90.45%, rgba(27, 23, 23, 0) 100%);
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
+
+.label{
+    align-self: center;
+}
+
+.mainMovie {
+
+}
+
+
+
+
+
+
