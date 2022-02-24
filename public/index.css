@@ -1,9 +1,16 @@
-
+body {
+    font-family: GT Eesti Pro Display, arial, sans-serif;
+}
+@font-face {
+    font-family: GT Eesti Pro Display, arial, sans-serif;
+}
 .background{
     background-color : #01090B
 }
 
 a, input, img {
+    outline: none;
+    text-decoration: none;
     display: block;
 }
 .item-a {
@@ -35,13 +42,14 @@ a, input, img {
 
 
 .fontGT{
-    font-family: GTEestiProDisplay-Bold, cursive;
+    font-family: "GT-Eesti-Pro-Display-Bold",cursive;
     font-style: normal;
     font-weight: bold;
     color: #FFFFFF;
 }
 
 .navbar {
+
     display: grid;
     grid-template-columns: 150px 150px 150px 150px 150px auto 50px auto 100px;
     column-gap: 10px;
@@ -65,7 +73,6 @@ input[type=text]:focus {
 
 
 .label{
-
     place-self: center;
 }
 
@@ -111,8 +118,8 @@ input[type=text]:focus {
 }
 
 .btn{
-    margin: 20px;
-    padding-block: 15px;
+    margin: 15px;
+    padding-block: 19px;
     padding-inline: 40px;
     font-style: normal;
     font-weight: 350;
@@ -126,8 +133,8 @@ input[type=text]:focus {
 
 }
 .btnInfo{
-    margin: 20px;
-    padding-block: 15px;
+    margin: 15px;
+    padding-block: 19px;
     padding-inline: 40px;
     font-style: normal;
     font-weight: 350;
@@ -158,7 +165,7 @@ input[type=text]:focus {
 }
 
 .select-1{
-    margin-bottom: 120px;
+    margin-inline: 22px;
     display: grid;
     grid-area: select1;
 }
@@ -167,10 +174,14 @@ input[type=text]:focus {
     display: grid;
     grid-template-columns: 10px;
     column-gap: 10px;
-    grid-template-rows: auto 50px;
+    grid-template-rows: 50px auto;
+
 }
 
 .selectMovies{
+    width: 1300px;
+    overflow-x: auto;
+    overflow-y: hidden;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     column-gap: 28px;
@@ -191,10 +202,15 @@ input[type=text]:focus {
     margin-inline-start: 15px;
 
     grid-template-areas:
-    " . "
+    "refMov "
     "descMov"
 
 }
+
+.refMov{
+    grid-area: movie;
+}
+
 
 .descMov{
     display: grid;
@@ -222,12 +238,12 @@ input[type=text]:focus {
 }
 
 .select-2{
-    margin-bottom: 120px;
+    margin-inline: 22px;
     grid-area: select2;
 }
 
 .select-3{
-    margin-bottom: 120px;
+    margin-inline: 22px;
     grid-area: select3;
 }
 
@@ -282,4 +298,80 @@ input[type=text]:focus {
     width: 39px;
     margin-right: 50px;
     margin-top: 20px;
+}
+
+
+* {box-sizing: border-box;}
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    height: 42px;
+}
+input {
+
+    font-size: 24px;
+    height: 48px;
+    width: 0;
+    padding: 0 42px 0 15px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    background: transparent;
+    transition: .4s cubic-bezier(0, 0.8, 0, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+input:focus {
+    width: 300px;
+    z-index: 1;
+    border-bottom: 2px solid #F9F0DA;
+}
+
+button {
+    background: url("static/lupa.png");
+    border: none;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-size: contain;
+}
+
+
+.section {
+    max-height: 250px;
+    padding: 1rem;
+    direction: ltr;
+    scrollbar-width: thin;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    p + p {
+        margin-top: 1rem;
+    }
+}
+
+.section::-webkit-scrollbar {
+    width: 20px;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #01090B;
+    border-radius: 100px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #393449;
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
 }

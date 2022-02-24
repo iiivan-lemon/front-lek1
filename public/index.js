@@ -11,9 +11,14 @@ header.className = "navbar fontGT";
 header.innerHTML += `<div><img src="static/logo.png" style  = "height: 100px"></div>`;
 headerStr = ["Главная", "Фильмы", "Сериалы", "Избранное"]
 headerStr.forEach((str) => {
-    header.innerHTML += `<div class = "label">${str}</div>`;
+    const refT = document.createElement("a");
+    refT.className = "label fontGT";
+    refT.href = "/";
+    refT.textContent =str;
+    header.appendChild(refT)
+
 });
-header.innerHTML += `<div></div><div></div><img src="static/lupa.png" class = "label" style  = "height: 30px">`
+header.innerHTML += `<div></div><div></div><form class = "label"><input type="text"   placeholder="Поиск..." class = "fontGT"><button type="submit"></button></form>`
 header.innerHTML += `<img src="static/profile.png" class = "label" style  = "height: 58px">`
 firstRow.appendChild(header)
 
@@ -29,11 +34,20 @@ title.innerHTML += `<div style="font-size: 96px;
 title.innerHTML += '<div style="font-weight: 350; font-size: 30px; line-height: 35px;">«Sometimes you have to reach into someone else\'s world to find out what\'s missing in your own»</div>'
 const btn = document.createElement("div")
 btn.className = "btn fontGT"
-btn.innerHTML += `Смотреть онлайн`
+const refBtn = document.createElement("a");
+refBtn.className = "label fontGT";
+refBtn.href = "/";
+refBtn.textContent ="Смотреть онлайн";
+btn.appendChild(refBtn)
 
 const btnInfo = document.createElement("div")
 btnInfo.className = "btnInfo fontGT"
-btnInfo.innerHTML += `О фильме`
+const refBtnInfo = document.createElement("a");
+refBtnInfo.className = "label fontGT";
+refBtnInfo.href = "/";
+refBtnInfo.textContent ="О фильме";
+btnInfo.appendChild(refBtnInfo)
+
 
 descr.appendChild(btnInfo)
 descr.appendChild(btn)
@@ -45,26 +59,33 @@ root.appendChild(firstRow)
 // подборки
 const selection = document.createElement("div");
 selection.className = "item-b selection";
-MovieName = ["Популярное", "Лучшее", "Семейное"]
+MovieName = ["Популярное", "Лучшее за 2021", "Семейное"]
 for (let i = 0; i < MovieName.length; i++)  {
 
     const selectFirst = document.createElement("div");
     selectFirst.className = "select-" +(i+1);
     const selectPop = document.createElement("div");
     selectPop.className = "selectPop fontGT";
-    selectPop.innerHTML += `<div style = "font-size: 36px;line-height: 42px;margin-inline-start: 30px;">${MovieName[i]}</div>`
+    selectPop.innerHTML += `<div style = "inline-size: max-content;font-size: 36px;line-height: 42px;margin-inline-start: 30px;">${MovieName[i]}</div>`
 
 //MovieUrl = ["star.png", "star.png", "star.png", "star.png","star.png"]
     const selectMovie = document.createElement("div");
-    selectMovie.className = "selectMovies";
+    selectMovie.className = "selectMovies section";
 
     for (let i = 0; i < 5; i++) {
+
         const movie = document.createElement("div");
         movie.className = "movie";
+        const refMov = document.createElement("a");
+        refMov.href = "/"
+        const hrefMov = document.createElement("div");
+        hrefMov.className = "refmov";
         const desMov = document.createElement("div");
-        desMov.className = "descMov"
+        desMov.className = "descMov";
         desMov.innerHTML += 'Звёздные войны<img src="static/heart.png" style = "width: 36px;">'
         desMov.innerHTML += '<div class = "genre fontGT">Фантастика</div>'
+        refMov.appendChild(hrefMov)
+        movie.appendChild(refMov)
         movie.appendChild(desMov)
         selectMovie.appendChild(movie)
         selectPop.appendChild(selectMovie)
